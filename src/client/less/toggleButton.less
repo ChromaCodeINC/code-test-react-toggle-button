@@ -1,0 +1,67 @@
+.toggle-button {
+  padding: 0px;
+  min-width: 100px;
+  height: 2.4em;
+  border-radius: 1.2em;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  color: @toggle-control-unchecked-color;
+  border: 1px solid @toggle-control-unchecked-color;
+  background-color: @toggle-control-unchecked-background;
+  transition: background-color .3s ease-in-out;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.toggle-button--unchecked:not(.toggle-button--loading):not(.toggle-button--disabled) {
+  &:hover {
+    border-color: @toggle-control-checked-color;
+    color: @toggle-control-checked-color;
+    transition: all .3s ease-in-out;
+  }
+}
+
+.toggle-button--checked {
+  color: @toggle-control-unchecked-background;
+  border-color: @toggle-control-checked-color;
+  background-color: @toggle-control-checked-color;
+  transition: all .3s ease-in-out;
+}
+
+.toggle-button--disabled.toggle-button--checked  {
+  background-color: @toggle-control-unchecked-color;
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.toggle-button--disabled {
+  border-color: @toggle-control-unchecked-color;
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.toggle-button__label {
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: .6em 1.2em;
+}
+
+.toggle-button--loading {
+  &:hover {
+    cursor: wait;
+  }
+}
+
+.toggle-button .chromaloader {
+  position: absolute;
+  top: 0.8em;
+  left: 0.15em;
+  width: 0.8em;
+  height: 0.8em;
+}
